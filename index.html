@@ -75,6 +75,13 @@
   #toast{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);background:#000c;color:#ffe2b0;padding:8px 14px;border-radius:12px;font-size:13px;font-weight:700;z-index:20;display:none;border:1px solid #ffbe6b66}
 </style>
 </head>
+ <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js").catch(() => {});
+    });
+  }
+</script>
 <body>
 <div id="phone">
   <div id="hud">
